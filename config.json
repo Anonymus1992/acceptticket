@@ -1,0 +1,59 @@
+{
+  "brand": {
+    "name": "Accept Ticket System",
+    "color": "#168BFF",
+    "footer": "Accept • Ticket Support"
+  },
+  "channels": {
+    "ticketCategoryId": "1565397893991502017",
+    "logChannelId": "1565399109798731828",
+    "transcriptLogChannelId": "1565399109798731828",
+    "panelChannelId": "1565399045420097716",
+    "ticketCategoryIds": {
+      "admin": "1565397893991502017",
+      "support": "1565397893991502017",
+      "faction": "1565397893991502017",
+      "general": "1565397893991502017"
+    }
+  },
+  "roles": {
+    "staffRoleIds": [
+      "816023712788643881"
+    ],
+    "adminRoleIds": [
+      "816023712788643881"
+    ]
+  },
+  "tickets": {
+    "namePrefix": "ticket",
+    "maxOpenPerUser": 2,
+    "closeDeleteDelaySeconds": 8,
+    "deleteAfterClose": false,
+    "supportTypes": [
+      {
+        "label": "Adminügy",
+        "value": "admin",
+        "emoji": "🛡️",
+        "description": "Adminisztrációval vagy vezetőségi üggyel kapcsolatos kérdés"
+      },
+      {
+        "label": "Támogatás",
+        "value": "support",
+        "emoji": "🎧",
+        "description": "Segítségkérés vagy támogatás"
+      },
+      {
+        "label": "Frakció probléma",
+        "value": "faction",
+        "emoji": "🏴",
+        "description": "Frakcióval vagy frakciótaggal kapcsolatos probléma"
+      },
+      {
+        "label": "Általános segítség",
+        "value": "general",
+        "emoji": "💬",
+        "description": "Egyéb kérdés vagy általános ügyintézés"
+      }
+    ]
+  }
+}
