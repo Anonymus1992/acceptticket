@@ -5,7 +5,7 @@ const {
   Client, GatewayIntentBits, Partials, ChannelType, PermissionFlagsBits,
   ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder
 } = require("discord.js");
-const config = require("../config.json");
+const config = require("./config.json");
 const { getTickets, saveTickets, nextTicketNumber } = require("./utils/storage");
 const { isStaff, isAdmin } = require("./utils/permissions");
 const { sendLog, makeEmbed } = require("./utils/logging");
