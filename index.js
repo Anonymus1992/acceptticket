@@ -6,10 +6,10 @@ const {
   ActionRowBuilder, ButtonBuilder, ButtonStyle, EmbedBuilder
 } = require("discord.js");
 const config = require("./config.json");
-const { getTickets, saveTickets, nextTicketNumber } = require("./utils/storage");
-const { isStaff, isAdmin } = require("./utils/permissions");
-const { sendLog, makeEmbed } = require("./utils/logging");
-const { createTranscript } = require("./utils/transcript");
+const { getTickets, saveTickets, nextTicketNumber } = require("./storage");
+const { isStaff, isAdmin } = require("./permissions");
+const { sendLog, makeEmbed } = require("./logging");
+const { createTranscript } = require("./transcript");
 
 if (!process.env.DISCORD_TOKEN) throw new Error("Hiányzik a DISCORD_TOKEN a .env fájlból.");
 
@@ -18,9 +18,9 @@ const client = new Client({
   partials: [Partials.Channel, Partials.Message]
 });
 
-const commandFiles = fs.readdirSync(path.join(__dirname, "commands")).filter(f => f.endsWith(".js"));
+const commandFiles = ["ticket-panel.js", "ticket-add.js", "ticket-remove.js", "ticket-stats.js"];
 const commands = new Map(commandFiles.map(file => {
-  const command = require(path.join(__dirname, "commands", file));
+  const command = require(path.join(__dirname, file));
   return [command.data.name, command];
 }));
 
@@ -186,7 +186,7 @@ async function finalizeClose(interaction, ticket) {
   }
 }
 
-client.once("ready", () => {
+client.once("clientReady", () => {
   console.log(`✅ ${client.user.tag} elindult. Accept Ticket System v1.0`);
 });
 
